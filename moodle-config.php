@@ -95,7 +95,7 @@ $CFG->dboptions = array(
 
 // $CFG->wwwroot   = getenv('MOODLE_URL');
 
-$CFG->wwwroot = 'http://'.$_SERVER['HTTP_HOST'];
+$CFG->wwwroot = 'https://'.$_SERVER['HTTP_HOST'];
 
 //=========================================================================
 // 3. DATA FILES LOCATION
