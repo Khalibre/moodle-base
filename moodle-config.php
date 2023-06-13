@@ -94,8 +94,16 @@ $CFG->dboptions = array(
 // http://docs.moodle.org/en/masquerading
 
 // $CFG->wwwroot   = getenv('MOODLE_URL');
+// $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https://' : 'http://';
+// $host = filter_var($_SERVER['HTTP_HOST'], FILTER_SANITIZE_SPECIAL_CHARS);
+// $sslProxyHeader = 'HTTP_X_FORWARDED_PROTO';
 
-$CFG->wwwroot = 'http://'.$_SERVER['HTTP_HOST'];
+// if (isset($_SERVER[$sslProxyHeader]) && $_SERVER[$sslProxyHeader] === 'https') {
+//     $protocol = 'https://';
+// }
+
+// $CFG->wwwroot = $protocol . $host;
+$CFG->wwwroot = 'https://'.$_SERVER['HTTP_HOST'];
 
 //=========================================================================
 // 3. DATA FILES LOCATION

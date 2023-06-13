@@ -101,17 +101,17 @@ if [[ "$1" == apache2* ]] || [ "$1" == php-fpm ]; then
 	# prevent container exit by php return value
 	set +e
 	# php /var/www/html/admin/cli/check_database_schema.php
-	dbStatus=$?
-	if [ $dbStatus  -eq 2 ]; then
-		echo >&2 "Creating database..."
-		php $PWD/admin/cli/install_database.php --lang="${MOODLE_LANG}" --adminuser="${MOODLE_ADMIN_USER}" --adminpass="${MOODLE_ADMIN_PASSWORD}" --adminemail="${MOODLE_ADMIN_EMAIL}" --agree-license --fullname="${MOODLE_SITE_FULLNAME}" --shortname="${MOODLE_SITE_NAME}"
-		echo >&2 "DATABASE CREATED"
-	elif [ $dbStatus -eq 0 ]; then
-		echo >&2 "MOODLE DATABASE FOUND: SKIP CREATION"
-	else
-		echo >&2 "ERRORS WITH MOODLE DATABASE!"
-		#exit $dbStatus
-	fi
+	# dbStatus=$?
+	# if [ $dbStatus  -eq 2 ]; then
+	# 	echo >&2 "Creating database..."
+	# 	php $PWD/admin/cli/install_database.php --lang="${MOODLE_LANG}" --adminuser="${MOODLE_ADMIN_USER}" --adminpass="${MOODLE_ADMIN_PASSWORD}" --adminemail="${MOODLE_ADMIN_EMAIL}" --agree-license --fullname="${MOODLE_SITE_FULLNAME}" --shortname="${MOODLE_SITE_NAME}"
+	# 	echo >&2 "DATABASE CREATED"
+	# elif [ $dbStatus -eq 0 ]; then
+	# 	echo >&2 "MOODLE DATABASE FOUND: SKIP CREATION"
+	# else
+	# 	echo >&2 "ERRORS WITH MOODLE DATABASE!"
+	# 	#exit $dbStatus
+	# fi
 
 		# moodle data directory
 

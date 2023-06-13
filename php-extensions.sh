@@ -48,7 +48,7 @@ docker-php-ext-install -j$(nproc) \
     pgsql \
     soap \
     xsl \
-    xmlrpc
+    exif
 
 # GD.
 docker-php-ext-configure gd --with-freetype=/usr/include/ --with-jpeg=/usr/include/

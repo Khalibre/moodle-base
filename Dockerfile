@@ -1,9 +1,9 @@
-FROM  php:7.4.25-apache-buster
+FROM  php:8.1.16-apache-buster
 LABEL MAINTAINER Sida Say <sida.say@khalibre.com>
 
-ARG MOODLE_VERSION=3.9.11
-ARG MOOSH_VERSION=1.3
-ARG COMPOSER_VERSION=2.1.12
+ARG MOODLE_VERSION=4.1.2
+ARG MOOSH_VERSION=1.5
+ARG COMPOSER_VERSION=2.5.4
 ENV DOCKERIZE_VERSION v0.6.1
 
 VOLUME ["/var/moodledata"]
@@ -43,6 +43,7 @@ RUN { \
   echo 'upload_max_filesize = 64M'; \
   echo 'post_max_size = 64M'; \
   echo 'max_execution_time = 600'; \
+  echo 'max_input_vars = 5000'; \
   } > /usr/local/etc/php/conf.d/uploads.ini
 
 RUN a2enmod rewrite expires

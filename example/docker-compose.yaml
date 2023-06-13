@@ -34,7 +34,7 @@ services:
   moodle-db:
     hostname: moodle-db
     container_name: moodle-db
-    image: mariadb:10.3
+    image: mariadb:10.4
     environment:
       MARIADB_ROOT_PASSWORD: 'moodle'
       MARIADB_DATABASE: 'moodle'
